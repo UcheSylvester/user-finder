@@ -1,11 +1,35 @@
 <div>
   <h4>Find Users on GitHub with just their username</h4>
 
-  <div>
-    <input type="search" placeholder="username" />
-  </div>
+  <input type="search" placeholder="username" />
 
-  <div class="card">
+  <div>
     <!-- each user card goes here -->
+    <div class="card" *ngIf="persons && persons.length">
+      <!-- show persons card -->
+
+      <div class="card" style="width: 18rem" *ngFor="let person of persons">
+        <img src=" {{ person.imageUrl }} " alt="" class="card-img-top" />
+
+        <div class="card-header">
+          {{ person.fullName }}
+          <p>{{ person.username }}</p>
+        </div>
+        <div class="card-body">
+          <p>{{ person.following }}</p>
+          <p>{{ person.followers }}</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+<!-- 
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div> -->
