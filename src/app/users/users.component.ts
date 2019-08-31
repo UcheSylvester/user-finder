@@ -3,7 +3,8 @@ import { IUsers } from "./users";
 
 @Component({
   selector: "github-users",
-  templateUrl: "./users.component.html"
+  templateUrl: "./users.component.html",
+  styleUrls: ["./users.component.css"]
 })
 export class UsersComponent {
   listFilter: string = "Uchenna";
