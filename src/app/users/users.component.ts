@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { IUsers } from "./users";
 
 @Component({
@@ -6,7 +6,7 @@ import { IUsers } from "./users";
   templateUrl: "./users.component.html",
   styleUrls: ["./users.component.css"]
 })
-export class UsersComponent {
+export class UsersComponent implements OnInit {
   listFilter: string = "Uchenna";
   pageTitle: string = "GitHub Users";
   persons: IUsers[] = [
@@ -43,4 +43,8 @@ export class UsersComponent {
       imageUrl: "assets/images/uc.JPG"
     }
   ];
+
+  ngOnInit(): void {
+    console.log("in onInit");
+  }
 }
