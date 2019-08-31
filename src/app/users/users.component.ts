@@ -1,39 +1,42 @@
 import { Component } from "@angular/core";
+import { IUsers } from "./users";
 
 @Component({
   selector: "github-users",
   templateUrl: "./users.component.html"
 })
 export class UsersComponent {
-  persons: any[] = [
+  listFilter: string = "Uchenna";
+  pageTitle: string = "GitHub Users";
+  persons: IUsers[] = [
     {
       userId: 1,
-      fullName: "Leaf Rake",
-      userName: "UcheSylvester",
+      fullName: "Uchenna Sylvester Okoro",
+      username: "UcheSylvester",
       following: 13,
       followers: 14,
       imageUrl: "assets/images/uc.JPG"
     },
     {
       userId: 2,
-      fullName: "Garden Cart",
-      userName: "UcheSylvester",
+      fullName: "Uchenna Sylvester Okoro",
+      username: "UcheSylvester",
       following: 13,
       followers: 14,
       imageUrl: "assets/images/uc.JPG"
     },
     {
       userId: 5,
-      fullName: "Hammer",
-      userName: "UcheSylvester",
+      fullName: "Uchenna Sylvester Okoro",
+      username: "UcheSylvester",
       following: 13,
       followers: 14,
       imageUrl: "assets/images/uc.JPG"
     },
     {
       userId: 8,
-      fullName: "Saw",
-      userName: "UcheSylvester",
+      fullName: "Uchenna Sylvester Okoro",
+      username: "UcheSylvester",
       following: 13,
       followers: 14,
       imageUrl: "assets/images/uc.JPG"
