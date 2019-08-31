@@ -1,1 +1,10 @@
 /* styles for the users component */
+
+div.users {
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  justify-content: center;
+  align-items: center;
+  margin-top: 3em;
+}
