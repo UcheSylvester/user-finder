@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { IUsers } from "./users";
+import { UsersService } from "./users.service";
 
 @Component({
   selector: "github-users",
@@ -24,40 +25,7 @@ export class UsersComponent implements OnInit {
   }
 
   filteredUsers: IUsers[];
-  users: IUsers[] = [
-    {
-      userId: 1,
-      fullName: "Uchenna Sylvester Okoro",
-      username: "Uche",
-      following: 13,
-      followers: 14,
-      imageUrl: "assets/images/uc.JPG"
-    },
-    {
-      userId: 2,
-      fullName: "Uchenna Sylvester Okoro",
-      username: "Sylvester",
-      following: 13,
-      followers: 14,
-      imageUrl: "assets/images/uc.JPG"
-    },
-    {
-      userId: 5,
-      fullName: "Uchenna Sylvester Okoro",
-      username: "OkoroSylvester",
-      following: 13,
-      followers: 14,
-      imageUrl: "assets/images/uc.JPG"
-    },
-    {
-      userId: 8,
-      fullName: "Uchenna Sylvester Okoro",
-      username: "Uchenna",
-      following: 13,
-      followers: 14,
-      imageUrl: "assets/images/uc.JPG"
-    }
-  ];
+  users: IUsers[];
 
   // using event binding to search
   searchUsers(): void {
@@ -65,10 +33,7 @@ export class UsersComponent implements OnInit {
     // console.log(e);
   }
 
-  constructor() {
-    this.filteredUsers = this.users;
-    this.listFilter = "";
-  }
+  constructor(private userSevice: UsersService) {}
 
   // filtering users
   performFilter(filterBy: string): IUsers[] {
@@ -81,5 +46,8 @@ export class UsersComponent implements OnInit {
 
   ngOnInit(): void {
     console.log("in onInit");
+    this.users = this.userSevice.getUsers();
+    this.filteredUsers = this.users;
+    this.listFilter = "";
   }
 }
