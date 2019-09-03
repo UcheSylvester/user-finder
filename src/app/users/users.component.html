@@ -6,7 +6,12 @@
       search:
     </div>
     <div class="col-md-6">
-      <input type="search" placeholder="username" [(ngModel)]="listFilter" />
+      <input
+        type="search"
+        placeholder="username"
+        [(ngModel)]="listFilter"
+        (input)="searchUsers()"
+      />
     </div>
   </div>
 
@@ -16,19 +21,19 @@
 
   <div>
     <!-- each user card goes here -->
-    <div class="card" *ngIf="persons && persons.length">
-      <!-- show persons card -->
+    <div class="card" *ngIf="users && users.length">
+      <!-- show users card -->
 
-      <div class="card" style="width: 18rem" *ngFor="let person of persons">
-        <img [src]="person.imageUrl" alt="" class="card-img-top" />
+      <div class="card" style="width: 18rem" *ngFor="let user of filteredUsers">
+        <img [src]="user.imageUrl" alt="" class="card-img-top" />
 
         <div class="card-header">
-          {{ person.fullName }}
-          <p>{{ person.username }}</p>
+          {{ user.fullName }}
+          <p>{{ user.username }}</p>
         </div>
         <div class="card-body">
-          <p>{{ person.following }} following</p>
-          <p>{{ person.followers }} followers</p>
+          <p>{{ user.following }} following</p>
+          <p>{{ user.followers }} followers</p>
         </div>
       </div>
     </div>
