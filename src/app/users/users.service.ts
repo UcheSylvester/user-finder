@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 
 import { IUsers } from "./users";
 
@@ -6,6 +7,11 @@ import { IUsers } from "./users";
   providedIn: "root"
 })
 export class UsersService {
+  // fetching from an external source
+  private gitHubUrl = "https://api.github.com/users/";
+
+  constructor(private http: HttpClient) {}
+
   getUsers(): IUsers[] {
     return [
       {
