@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { IUsers } from "./users";
 
 @Component({
-  selector: 'pm-user-detail',
-  templateUrl: './user-detail.component.html',
-  styleUrls: ['./user-detail.component.css']
+  templateUrl: "./user-detail.component.html",
+  styleUrls: ["./user-detail.component.css"]
 })
 export class UserDetailComponent implements OnInit {
+  pageTitle: string = "User Detail";
+  users: IUsers;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

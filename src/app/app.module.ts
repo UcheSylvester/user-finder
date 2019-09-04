@@ -7,17 +7,25 @@ import { RouterModule } from "@angular/router";
 import { AppComponent } from "./app.component";
 import { UsersComponent } from "./users/users.component";
 import { WelcomeComponent } from "./home/welcome.component";
-import { UserDetailComponent } from './users/user-detail.component';
+import { UserDetailComponent } from "./users/user-detail.component";
 
 @NgModule({
-  declarations: [AppComponent, UsersComponent, WelcomeComponent, UserDetailComponent],
+  declarations: [
+    AppComponent,
+    UsersComponent,
+    WelcomeComponent,
+    UserDetailComponent
+  ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
       { path: "users", component: UsersComponent },
-      // { path: "users/:id", component: UserDetailComponent }
+      { path: "users/:id", component: UserDetailComponent },
+      { path: "welcome", component: WelcomeComponent },
+      { path: "", redirectTo: "welcome", pathMatch: "full" },
+      { path: "**", redirectTo: "welcome", pathMatch: "full" }
     ])
   ],
   bootstrap: [AppComponent]
